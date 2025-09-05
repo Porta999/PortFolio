@@ -3,6 +3,7 @@
 	"type": "module",
 	"version": "0.0.0",
 	"private": true,
+	"homepage": "https://dantemur.github.io/PortFolio/",
 	"scripts": {
 		"dev": "vite",
 		"build": "node tools/generate-llms.js || true && vite build",
