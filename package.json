@@ -6,7 +6,7 @@
 	"homepage": "https://porta999.github.io/",
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
+		"build": "npx vite build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
