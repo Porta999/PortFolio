@@ -9,10 +9,9 @@ const projectsData = [
         id: 1,
         title: "Rock&Fire",
         "description": "Página web para un servicio de catering con menú digital y diseño responsivo",
-        "image": "Modern catering website showcasing services, menu and contact form",
         "technologies": ["HTML", "CSS", "JavaScript"],
         "link": "https://rockandfire.com.ar",
-        "image":"../../../public/proyects/rockandfire.jpg",
+        "image":"/proyects/rockandfire.jpg",
     }
 ];
 
