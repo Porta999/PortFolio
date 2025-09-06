@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+  page_build:
 
 jobs:
   build_and_deploy:
@@ -33,12 +35,18 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build_and_deploy
+    steps:
       - name: Deploy to GitHub Pages
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git checkout main
-          git add dist -f
-          git commit -m "Deploy to GitHub Pages" || true
-          git subtree push --prefix dist origin main
+        id: deployment
+        uses: actions/deploy-pages@v3
