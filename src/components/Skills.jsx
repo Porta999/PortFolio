@@ -10,6 +10,8 @@ const skills = [
   { name: 'Python', logo: '/logos/python.png' },
   { name: 'Java', logo: '/logos/java.png' },
   { name: 'SQL', logo: '/logos/sql.png' },
+  { name: 'Angular', logo: '/logos/angular.png' },
+  {name: 'TypeScript', logo: '/logos/typescript.png'},
 ];
 
 const Skills = () => {
