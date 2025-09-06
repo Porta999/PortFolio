@@ -27,6 +27,9 @@ jobs:
           file node_modules/.bin/vite
           ls -l node_modules/.bin/
 
+      - name: Grant execute permission to Vite
+        run: chmod +x node_modules/.bin/vite
+
       - name: Build
         run: npm run build
 
